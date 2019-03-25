@@ -17,6 +17,15 @@ if (n > 1) {
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+  if (array.length > 1) {
+    //  recursive case
+    //  call sum on slice of array
+    return sum(array.slice(1)) + array[0];
+  } else {
+    //  base case
+    //  return the single number left
+    return array[0];
+  }
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
