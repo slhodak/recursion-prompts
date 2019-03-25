@@ -7,18 +7,9 @@
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
-  //  decrement n to expose all integers greater than 0
-  //  use call stack as memory of how many times to do multiplication
-  //  if recursive case, decrement
-  //  if base case, multiply
-  //  call stack depth will naturally handle the number of multiplications you need
-  //  will n be stored the same as we return up the call stack?
-  //  may need to copy n to avoid infinite loop--or I can use negative numbers :)
-  if (n > 1) {
-    //  recursive case
-    return factorial(n - 1) * n; //  factorial will find the value of multiplying an integer by the integer below it
+if (n > 1) {
+    return factorial(n - 1) * n;
   } else {
-    //  base case
     return 1;
   }
 };
