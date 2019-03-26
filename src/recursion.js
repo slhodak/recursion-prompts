@@ -29,19 +29,19 @@ var sum = function(array) {
 var arraySum = function(array) {
   if (typeof(array[0]) === 'object') {
     //  recursive case
-    //  dig deeper
     if (array.length > 1) {
-      return sum(array[0]) + arraySum(array.slice(1));
+      return arraySum(array[0]) + arraySum(array.slice(1));
     } else {
-      return sum(array[0]);
+      console.log('first element of single element array ' + array[0]);
+      return arraySum(array[0]);
     }
-    
   } else {
-    //  base case
-    //  add
+    //  recursively add elements
     if (array.length > 1) {
+      //  recursive case
       return array[0] + arraySum(array.slice(1));
     } else {
+      //  base case
       return array[0];
     }
   }
