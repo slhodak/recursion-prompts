@@ -28,20 +28,15 @@ var sum = function(array) {
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
   if (typeof(array[0]) === 'object') {
-    //  recursive case
     if (array.length > 1) {
       return arraySum(array[0]) + arraySum(array.slice(1));
     } else {
-      console.log('first element of single element array ' + array[0]);
       return arraySum(array[0]);
     }
   } else {
-    //  recursively add elements
     if (array.length > 1) {
-      //  recursive case
       return array[0] + arraySum(array.slice(1));
     } else {
-      //  base case
       return array[0];
     }
   }
